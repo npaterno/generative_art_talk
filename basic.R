@@ -28,10 +28,13 @@ seq(-3, 3, by = 0.02) %>%
                  color = x),
              size = 0,
              shape = 20,
-             alpha = 0.2)+
+             alpha = 0.5)+
   scale_color_viridis_c(option = "turbo")+
-  dark_theme_void()+
+  theme_void()+
+  theme(panel.background = element_rect(fill = "lightgoldenrodyellow"),
+        panel.border = element_blank(),
+        plot.background = element_rect(fill = "lightgoldenrodyellow"))+
   guides(color = "none")+
   coord_polar()
 
-ggsave(here::here("images/basic_example_2_colorized.png"))
+ggsave(here::here("images/basic_example_2_colorized.png"), dpi = 300)
