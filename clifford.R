@@ -1,7 +1,9 @@
+# Load packages
 library(dplyr)
 library(ggplot2)
 library(Rcpp)
 
+# Theme for plots
 opt = theme(legend.position  = "none",
             panel.background = element_rect(fill="#cc9933"),
             axis.ticks       = element_blank(),
@@ -9,6 +11,7 @@ opt = theme(legend.position  = "none",
             axis.title       = element_blank(),
             axis.text        = element_blank())
 
+# C++ function to generate data
 cppFunction('DataFrame createTrajectory(int n, double x0, double y0, 
             double a, double b, double c, double d) {
             // create the columns
@@ -25,13 +28,17 @@ cppFunction('DataFrame createTrajectory(int n, double x0, double y0,
             }
             ')
 
+# Parameter values
 a=1.24458046630025
 b=-1.25191834103316 
 c=1.81590817030519 
 d=-1.90866735205054
 
+# Generate data with parameters and C++ function
 df=createTrajectory(10000000, 0, 0, a, b, c, d)
 
+# Plot data
 ggplot(df, aes(x, y)) + geom_point(color="white", shape=46, alpha=.01) + opt
 
+# Save data
 ggsave(here::here("images/clifford.png"), dpi = 300)

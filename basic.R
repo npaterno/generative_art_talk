@@ -3,8 +3,8 @@ library(dplyr)
 library(ggplot2)
 library(ggdark)
 
-# Examples using base R to generate a grid of x,y values and ggplot (along with formulas) to generate the art
 
+# Step 1: Trig Functions
 seq(-5, 5, by = 0.01) %>% 
   expand.grid(x = ., y = .) %>% 
   ggplot()+
@@ -16,8 +16,11 @@ seq(-5, 5, by = 0.01) %>%
              color = "white")+
   dark_theme_void()
 
+# Save image
 ggsave(here::here("images/basic.png"), dpi = 300)
 
+
+# Step 2: Add polar coordinates
 seq(-5, 5, by = 0.01) %>% 
   expand.grid(x = ., y = .) %>% 
   ggplot()+
@@ -30,8 +33,11 @@ seq(-5, 5, by = 0.01) %>%
   dark_theme_void()+
   coord_polar()
 
+# Save image
 ggsave(here::here("images/polar.png"), dpi = 300)
    
+
+# Step 3: Add color
 seq(-5, 5, by = 0.01) %>% 
   expand.grid(x = ., y = .) %>% 
   ggplot()+
@@ -46,4 +52,5 @@ seq(-5, 5, by = 0.01) %>%
   coord_polar()+
   guides(color = "none")
 
+# Save image
 ggsave(here::here("images/color.png"), dpi = 300)
