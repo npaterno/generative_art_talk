@@ -22,7 +22,7 @@ ggplot(lor, aes(x, y, color = x))+
 ggsave(here::here("images/lorenz_colorized.png"), dpi = 300)
 
 ggplot(lor_alt, aes(x, y, color = sin(x)+cos(y)))+
-  geom_point(shape = 46, size = 0, alpha = 0.01)+
+  geom_point(shape = 46, size = 0, alpha = 0.025)+
   theme_void()+
   guides(color = "none")+
   scale_color_viridis_c(option = "turbo")

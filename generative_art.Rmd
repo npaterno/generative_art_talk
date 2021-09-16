@@ -18,24 +18,15 @@ output:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
-
-library(dplyr)
-library(ggplot2)
-library(ggdark)
-library(jasmines)
-library(flametree)
-library(Rcpp)
 ```
 
-```{r openMic, include = FALSE}
+```{r openMic, include = FALSE, eval = FALSE}
 openMic::openMic()
 ```
 
 class: main
 
 ## What is Generative Art? 
-
-<img alt="Art: Created using trig functions and polar coordinates by N. Paterno" src="images/basic_example_2_colorized.png" class="img_center"/>
 
 --
 
@@ -72,95 +63,76 @@ class: main
 class: main
 
 ## Basics I
-### Using trig functions 
+### Start with trig functions 
 
-```{r}
+<img alt="A plot from trig functions." src="images/basic.png" class="img_center"/>
 
-```
+--
 
---- 
+$x = 1-sin(x^2)+cos(y^2)$
+
+$y = -cos(y*x^2)-sin(y)$
+
+---
 
 class: main
 
 ## Basics II
 ### Adding polar coordinates
 
-```{r}
+<img alt="Trig plot in polar coordinates." src="images/polar.png" class="img_center"/>
 
-```
-
---- 
+---
 
 class: main
 
 ## Basics III
 ### Adding color
 
-```{r}
-
-```
+<img alt="Final colorized plot." src="images/color.png" class="img_center"/>
 
 ---
 
 class: main
 
-## Non-linear Dynamics: Attractors
+## Non-linear Dynamics: 
 ### Clifford Attractor
 
-```{r, echo = FALSE}
-opt = theme(legend.position  = "none",
-            panel.background = element_rect(fill="#87212e"),
-            axis.ticks       = element_blank(),
-            panel.grid       = element_blank(),
-            axis.title       = element_blank(),
-            axis.text        = element_blank())
-
-cppFunction('DataFrame createTrajectory(int n, double x0, double y0, 
-            double a, double b, double c, double d) {
-            // create the columns
-            NumericVector x(n);
-            NumericVector y(n);
-            x[0]=x0;
-            y[0]=y0;
-            for(int i = 1; i < n; ++i) {
-            x[i] = sin(a*y[i-1])+c*cos(a*x[i-1]);
-            y[i] = sin(b*x[i-1])+d*cos(b*y[i-1]);
-            }
-            // return a new data frame
-            return DataFrame::create(_["x"]= x, _["y"]= y);
-            }
-            ')
-
-a=-1.24458046630025
-b=-1.25191834103316 
-c=1.81590817030519 
-d=-1.90866735205054
-
-df=createTrajectory(10000000, 0, 0, a, b, c, d)
-
-ggplot(df, aes(x, y)) + geom_point(color="white", shape=46, alpha=.01) + opt
-```
+<img alt="A plot of a Clifford Attractor using 10 million data points" src="images/clifford.png" class="img_center"/>
 
 ---
 
 class: main
 
-## Non-linear Dynamics: Attractors
+## Non-linear Dynamics: 
 ### Lorenz Attractor
 
-```{r}
-
-```
+<img alt="A plot of a Lorenz Attractor using 1 million data points" src="images/basic_lorenz.png" class="img_center"/>
 
 ---
+
+class: main
+
+## Non-linear Dynamics: 
+### Lorenz Attractor
+
+<img alt="A plot of a Lorenz Attractor using 1 million data points" src="images/lorenz_colorized.png" class="img_center"/>
+
+---
+
+class: main
+
+## Non-linear Dynamics: 
+### Lorenz Attractor
+
+<img alt="A plot of a Lorenz Attractor using 1 million data points" src="images/lorenz_alt.png" class="img_center"/>
+
+---
+
 class: main
 
 ## Jasmines
 ### A package by Danielle Navarro
-
-```{r}
-
-```
 
 ---
 
@@ -169,10 +141,12 @@ class: main
 ## Flametree
 ### A package by Danielle Navarro
 
-```{r}
+<img alt="A flametree image." src="images/flametree_example.png" class="img_center"/>
 
-```
+---
 
---- 
+class: inverse
 
-{ADD THANK YOU SLIDE}
+# Thank you!
+
+### Questions?
