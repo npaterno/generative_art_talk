@@ -28,13 +28,50 @@ class: main
 
 ## What is Generative Art? 
 
+### 1950's - Ellsworth Kelly
+
+* Starting in 1951, Kelly created a series of eight pieces titled "Spectrum Colors Arranged by Chance I to VIII". 
+
 --
 
-- "Generative art refers to art that in whole or in part has been created with the use of an autonomous system." ~ Wikipedia
+<figure>
+  <img alt="One of eight pieces from Ellsworth Kelly's 'Spectrum of Colors Arranged by Chance'." src="images/kelly.jpeg" class= "img_center_2"/>
+  <figcaption>"Spectrum of Colors Arranged by Chance VI", Kelly</figcaption>
+<figure/>
+
+---
+
+class: main
+
+## What is Generative Art? 
+
+### 1965 - Georg Nees
+
+* In 1965, *Computergrafik* was the first exhibition world-wide of generative art created with the use of a digital computer.
 
 --
 
-- "Put very simply, Generative Art is a form of digital art that's generated randomly, whether that's by using autonomous machines or algorithms." ~[Agora Digital Art](https://agoradigital.art/blog-what-is-generative-art/) 
+<figure>
+  <img alt="A computer generated image titled 'Andreaskreuz' of many lines forming a cross. Created by Georg Nees." src="images/nees.jpeg" class= "img_center_2"/>
+  <figcaption>"Andreaskreuz", Nees</figcaption>
+<figure/>
+
+---
+
+class: main
+
+## What is Generative Art? 
+
+### 2003 - Mark Napier
+
+* Napier translated the Old Testament, New Testament and the Koran into binary data and used the stream of 1's and 0's to drive a black and white line on the screen.
+
+--
+
+<figure>
+  <img alt="Black and White by Mark Napier." src="images/napier_black_white.png" class= "img_center_2"/>
+  <figcaption>"Black and White", Napier</figcaption>
+<figure/>
 
 ---
 
@@ -150,5 +187,9 @@ class: main
 class: inverse
 
 # Thank you!
+
+Slides available at [npaterno.github.io/left_coast_stats](https://npaterno.github.io/left_coast_stats)
+
+Code available at [github.com/npaterno/generative_art_talk](https://github.com/npaterno/generative_art_talk)
 
 ### Questions?

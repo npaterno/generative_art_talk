@@ -17,6 +17,13 @@ h1, h2, h3{
   width: 70%;
 }
 
+.img_center_2 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 .main{
   color: #000000;
 }
