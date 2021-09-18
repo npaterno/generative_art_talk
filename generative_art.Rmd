@@ -45,6 +45,47 @@ class: main
 
 ## What is Generative Art? 
 
+### 2021 - Ellsworth Kelly Recreated in R
+
+<img alt="Digital recreation of Kelly's methodology using R" src="images/kelly_r.png" width="65%"/>
+
+---
+
+class: main
+
+## What is Generative Art? 
+
+### 2021 - Ellsworth Kelly Recreated in R
+
+```{r, eval=FALSE}
+# Generate data frame with random values for color
+color_data <- sample(1:18, 1600, replace = TRUE)
+df <- data.frame(expand.grid(0:39, 0:39))
+plot_data <- df %>% 
+  mutate(color_data = as.integer(color_data))
+
+# Generate colors
+clrs = grDevices::colors()[grep('gr(a|e)y', 
+                                grDevices::colors(), 
+                                invert = T)]
+plot_clrs = sample(clrs, 18)
+
+
+# Generate Plot
+ggplot(plot_data) +
+  geom_rect(aes(xmin = Var1, xmax = Var1+1, 
+                ymin = Var2, ymax = Var2+1), 
+            fill = plot_clrs[color_data])+
+  theme_void()
+```
+
+
+---
+
+class: main
+
+## What is Generative Art? 
+
 ### 1965 - Georg Nees
 
 * In 1965, *Computergrafik* was the first exhibition world-wide of generative art created with the use of a digital computer.
@@ -188,8 +229,8 @@ class: inverse
 
 # Thank you!
 
-Slides available at [npaterno.github.io/left_coast_stats](https://npaterno.github.io/left_coast_stats)
+### Slides available at [npaterno.github.io/left_coast_stats](https://npaterno.github.io/left_coast_stats)
 
-Code available at [github.com/npaterno/generative_art_talk](https://github.com/npaterno/generative_art_talk)
+### Code available at [github.com/npaterno/generative_art_talk](https://github.com/npaterno/generative_art_talk)
 
 ### Questions?
