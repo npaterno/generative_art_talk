@@ -28,13 +28,92 @@ class: main
 
 ## What is Generative Art? 
 
+### 1950's - Ellsworth Kelly
+
+* Starting in 1951, Kelly created a series of eight pieces titled "Spectrum Colors Arranged by Chance I to VIII". 
+
 --
 
-- "Generative art refers to art that in whole or in part has been created with the use of an autonomous system." ~ Wikipedia
+&lt;figure&gt;
+  &lt;img alt="One of eight pieces from Ellsworth Kelly's 'Spectrum of Colors Arranged by Chance'." src="images/kelly.jpeg" class= "img_center_2"/&gt;
+  &lt;figcaption&gt;"Spectrum of Colors Arranged by Chance VI", Kelly&lt;/figcaption&gt;
+&lt;figure/&gt;
+
+---
+
+class: main
+
+## What is Generative Art? 
+
+### 2021 - Ellsworth Kelly Recreated in R
+
+&lt;img alt="Digital recreation of Kelly's methodology using R" src="images/kelly_r.png" width="65%"/&gt;
+
+---
+
+class: main
+
+## What is Generative Art? 
+
+### 2021 - Ellsworth Kelly Recreated in R
+
+
+```r
+# Generate data frame with random values for color
+color_data &lt;- sample(1:18, 1600, replace = TRUE)
+df &lt;- data.frame(expand.grid(0:39, 0:39))
+plot_data &lt;- df %&gt;% 
+  mutate(color_data = as.integer(color_data))
+
+# Generate colors
+clrs = grDevices::colors()[grep('gr(a|e)y', 
+                                grDevices::colors(), 
+                                invert = T)]
+plot_clrs = sample(clrs, 18)
+
+
+# Generate Plot
+ggplot(plot_data) +
+  geom_rect(aes(xmin = Var1, xmax = Var1+1, 
+                ymin = Var2, ymax = Var2+1), 
+            fill = plot_clrs[color_data])+
+  theme_void()
+```
+
+
+---
+
+class: main
+
+## What is Generative Art? 
+
+### 1965 - Georg Nees
+
+* In 1965, *Computergrafik* was the first exhibition world-wide of generative art created with the use of a digital computer.
 
 --
 
-- "Put very simply, Generative Art is a form of digital art that's generated randomly, whether that's by using autonomous machines or algorithms." ~[Agora Digital Art](https://agoradigital.art/blog-what-is-generative-art/) 
+&lt;figure&gt;
+  &lt;img alt="A computer generated image titled 'Andreaskreuz' of many lines forming a cross. Created by Georg Nees." src="images/nees.jpeg" class= "img_center_2"/&gt;
+  &lt;figcaption&gt;"Andreaskreuz", Nees&lt;/figcaption&gt;
+&lt;figure/&gt;
+
+---
+
+class: main
+
+## What is Generative Art? 
+
+### 2003 - Mark Napier
+
+* Napier translated the Old Testament, New Testament and the Koran into binary data and used the stream of 1's and 0's to drive a black and white line on the screen.
+
+--
+
+&lt;figure&gt;
+  &lt;img alt="Black and White by Mark Napier." src="images/napier_black_white.png" class= "img_center_2"/&gt;
+  &lt;figcaption&gt;"Black and White", Napier&lt;/figcaption&gt;
+&lt;figure/&gt;
 
 ---
 
@@ -150,6 +229,10 @@ class: main
 class: inverse
 
 # Thank you!
+
+### Slides available at [npaterno.github.io/left_coast_stats](https://npaterno.github.io/left_coast_stats)
+
+### Code available at [github.com/npaterno/generative_art_talk](https://github.com/npaterno/generative_art_talk)
 
 ### Questions?
     </textarea>
