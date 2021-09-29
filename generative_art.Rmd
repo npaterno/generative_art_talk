@@ -140,6 +140,24 @@ class: main
 
 class: main
 
+## Jasmines
+### A package by Danielle Navarro
+
+<img alt="A plot generated with the Jasmines R package" src="images/jasmines.png" class="img_center"/>
+
+---
+
+class: main
+
+## Flametree
+### A package by Danielle Navarro
+
+<img alt="A flametree image." src="images/flametree_example.png" class="img_center"/>
+
+---
+
+class: main
+
 ## Basics I
 ### Start with trig functions 
 
@@ -204,24 +222,6 @@ class: main
 ### Lorenz Attractor
 
 <img alt="A plot of a Lorenz Attractor using 1 million data points" src="images/lorenz_alt.png" class="img_center"/>
-
----
-
-class: main
-
-## Jasmines
-### A package by Danielle Navarro
-
-<img alt="A plot generated with the Jasmines R package" src="images/jasmines.png" class="img_center"/>
-
----
-
-class: main
-
-## Flametree
-### A package by Danielle Navarro
-
-<img alt="A flametree image." src="images/flametree_example.png" class="img_center"/>
 
 ---
 
